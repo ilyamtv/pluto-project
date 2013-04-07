@@ -1,2 +1,2 @@
-fry-project
+Fry project
 ===========

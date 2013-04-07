@@ -7,19 +7,22 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Fry', 'fry@domain.com'),
 )
 
 MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        "ENGINE": "django.db.backends.mysql",
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
+        'OPTIONS': {
+            'init_command': 'SET names "utf8"',
+        },
     }
 }
 
@@ -91,7 +94,6 @@ SECRET_KEY = '(l5g7tk1*3-ngtri_zhqp3_%1=ph5t&amp;03&amp;et*&amp;9ps269olo@3-'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -104,12 +106,16 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
+TEMPLATE_CONTEXT_PROCESSORS += (
+    'django.core.context_processors.request',
+)
+
 ROOT_URLCONF = 'project.urls'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    path.join(PROJECT_ROOT, 'templates/default'),
+    path.join(PROJECT_ROOT, 'templates/default/layout')
 )
 
 INSTALLED_APPS = (
@@ -124,6 +130,14 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': path.join(PROJECT_ROOT, 'stock/cache'),
+        'TIMEOUT': 3600,
+    }
+}
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
