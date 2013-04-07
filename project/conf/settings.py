@@ -33,6 +33,7 @@ STATICFILES_DIRS = ()
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'fry.core.finders.StaticFinder',
 )
 
 SECRET_KEY = '(l5g7tk1*3-ngtri_zhqp3_%1=ph5t&amp;03&amp;et*&amp;9ps269olo@3-'
@@ -58,6 +59,7 @@ TEMPLATE_CONTEXT_PROCESSORS += (
 ROOT_URLCONF = 'project.urls'
 
 TEMPLATE_DIRS = (
+    path.join(PROJECT_ROOT, 'templates'),
     path.join(PROJECT_ROOT, 'templates/default'),
     path.join(PROJECT_ROOT, 'templates/default/layout')
 )
@@ -74,6 +76,7 @@ INSTALLED_APPS = (
     'mptt',
     'south',
 
+    'fry',
     'example',
 )
 

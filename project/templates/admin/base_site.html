@@ -1,0 +1,22 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | {% trans 'Django site admin' %}{% endblock %}
+
+{% block extrahead %}
+    <script src="{{ STATIC_URL }}packs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="{{ STATIC_URL }}packs/chosen/chosen.jquery.min.js" type="text/javascript"></script>
+    <script src="{{ STATIC_URL }}fry/js/admin.js" type="text/javascript"></script>
+{% endblock %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}packs/chosen/chosen.css" />
+
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}fry/css/base.css" />
+{% endblock %}
+
+{% block branding %}
+    <h1 id="site-name">Система управления сайтом</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

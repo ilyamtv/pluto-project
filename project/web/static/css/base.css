@@ -1,0 +1,19 @@
+body {
+    padding-top: 10px;
+}
+
+.sidebar-nav {
+    padding: 9px 0;
+}
+
+.product-item {
+    margin-bottom: 20px;
+}
+.product-item .image {
+    display: block;
+    margin-bottom: 5px;
+    height: 145px; overflow: hidden;
+}
+.product-item .title {
+    font-size: 14px;
+}

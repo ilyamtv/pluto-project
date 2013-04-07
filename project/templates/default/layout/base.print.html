@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <title>{% block page_title %}{% endblock %}</title>
+    <meta name="description" content="{% block page_description %}{% endblock %}"/>
+    <meta name="keywords" content="{% block page_keywords %}{% endblock %}"/>
+    
+    <style type="text/css" media='print'>
+       .print {display: none;}
+    </style>
+    {% block css %}{% endblock %}
+    
+    <script>
+        //window.print();
+    </script>
+    {% block js %}{% endblock %}
+</head>
+<body>
+    {% block base_content %}{% endblock %}
+</body>
+</html>

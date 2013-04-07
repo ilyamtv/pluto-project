@@ -6,4 +6,4 @@ local_settings.py
 .idea
 
 project/conf/private.py
-project/conf/dev.py
+project/conf/development.py
