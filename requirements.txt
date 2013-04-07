@@ -1,0 +1,16 @@
+# pip install -r requirements.txt
+
+Django==1.4.5
+South==0.7.6
+django-mptt==0.5.2
+pil==1.1.7
+
+django-classy-tags==0.3.3
+django-sekizai==0.6.1
+html5lib==0.90
+django-cms==2.3.5
+
+django-endless-pagination==2.0
+sorl-thumbnail==11.12
+
+django-debug-toolbar
