@@ -13,6 +13,10 @@ class Example(models.Model):
 
     title = models.CharField(null=False, max_length=255, verbose_name=_('Title'))
     category = models.ForeignKey('example.ExampleCategory', null=True, blank=True)
+    image = models.ImageField(upload_to='example', null=True, blank=True)
+    content = models.TextField(null=True, blank=True)
+    date_state = models.DateTimeField(null=True, blank=True)
+    is_active = models.BooleanField(null=False, default=False)
 
     def __unicode__(self):
         return self.title

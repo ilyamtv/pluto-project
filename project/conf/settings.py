@@ -75,6 +75,7 @@ INSTALLED_APPS = (
 
     'mptt',
     'south',
+    'sorl.thumbnail',
 
     'fry',
     'example',
