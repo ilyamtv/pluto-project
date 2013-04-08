@@ -1,6 +1,6 @@
 from django import forms
 from example.models import Example, ExampleCategory
-from fry.admin.widgets import AdminImageWidget
+from pluto.admin.widgets import AdminImageWidget
 
 class ExampleAdminForm(forms.ModelForm):
 
